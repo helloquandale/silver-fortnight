@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Input Example</title>
+  <style>
+    /* CSS styles for labels and inputs */
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    
+    .column {
+      float: left;
+      width: 50%;
+    }
+    
+    .clear {
+      clear: both;
+    }
+    
+    input[type="number"] {
+      margin-bottom: 10px;
+    }
+    
+    /* CSS styles for the calculate button */
+    #calculateButton {
+      margin-top: 20px;
+    }
+    
+    /* CSS styles for the result paragraph */
+    #result {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="column">
+    <label for="m1">Miles For Day One:</label>
+    <input type="number" id="m1" min="0" max="10000">
+
+    <label for="m2">Miles For Day Two:</label>
+    <input type="number" id="m2" min="0" max="10000">
+
+    <label for="m3">Miles For Day Three:</label>
+    <input type="number" id="m3" min="0" max="10000">
+
+    <label for="m4">Miles For Day Four:</label>
+    <input type="number" id="m4" min="0" max="10000">
+
+    <label for="m5">Miles For Day Five:</label>
+    <input type="number" id="m5" min="0" max="10000">
+
+    <label for="m6">Miles For Day Six:</label>
+    <input type="number" id="m6" min="0" max="10000">
+
+    <label for="m7">Miles For Day Seven:</label>
+    <input type="number" id="m7" min="0" max="10000">
+  </div>
+  
+  <div class="column">
+    <label for="g1">Gallons For Day One:</label>
+    <input type="number" id="g1" min="0" max="10000">
+
+    <label for="g2">Gallons For Day Two:</label>
+    <input type="number" id="g2" min="0" max="10000">
+
+    <label for="g3">Gallons For Day Three:</label>
+    <input type="number" id="g3" min="0" max="10000">
+
+    <label for="g4">Gallons For Day Four:</label>
+    <input type="number" id="g4" min="0" max="10000">
+
+    <label for="g5">Gallons For Day Five:</label>
+    <input type="number" id="g5" min="0" max="10000">
+
+    <label for="g6">Gallons For Day Six:</label>
+    <input type="number" id="g6" min="0" max="10000">
+
+    <label for="g7">Gallons For Day Seven:</label>
+    <input type="number" id="g7" min="0" max="10000">
+  </div>
+  
+  <div class="clear"></div>
+
+  <button id="calculateButton">Calculate</button>
+
+  <p>Result: <span id="result"></span></p>
+
+  <script>
+    document.getElementById("calculateButton").addEventListener("click", calculate);
+
+    function calculate() {
+      var g1 = parseInt(document.getElementById('g1').value) || 0;
+      var g2 = parseInt(document.getElementById('g2').value) || 0;
+      var g3 = parseInt(document.getElementById('g3').value) || 0;
+      var g4 = parseInt(document.getElementById('g4').value) || 0;
+      var g5 = parseInt(document.getElementById('g5').value) || 0;
+      var g6 = parseInt(document.getElementById('g6').value) || 0;
+      var g7 = parseInt(document.getElementById('g7').value) || 0;
+
+      var m1 = parseInt(document.getElementById('m1').value) || 0;
+      var m2 = parseInt(document.getElementById('m2').value) || 0;
+      var m3 = parseInt(document.getElementById('m3').value) || 0;
+      var m4 = parseInt(document.getElementById('m4').value) || 0;
+      var m5 = parseInt(document.getElementById('m5').value) || 0;
+      var m6 = parseInt(document.getElementById('m6').value) || 0;
+      var m7 = parseInt(document.getElementById('m7').value) || 0;
+
+      var totalMiles = m1 + m2 + m3 + m4 + m5 + m6 + m7;
+      var totalGallons = g1 + g2 + g3 + g4 + g5 + g6 + g7;
+
+      var avg = totalMiles !== 0 ? totalMiles / totalGallons : 0;
+
+      document.getElementById('result').textContent = avg;
+    }
+  </script>
+</body>
+</html>
